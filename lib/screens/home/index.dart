@@ -1,4 +1,7 @@
+import 'package:evant/screens/home/parts/details.dart';
+import 'package:evant/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -13,15 +16,22 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final kTabPages = [
-      const Center(child: Icon(Icons.abc, size: 50)),
+      const Details(),
       const Center(child: Icon(Icons.class_rounded, size: 50)),
       const Center(child: Icon(Icons.person, size: 50)),
     ];
 
     final kBottomNavBarItems = [
-      const BottomNavigationBarItem(icon: Icon(Icons.cloud), label: "Tab 1"),
-      const BottomNavigationBarItem(icon: Icon(Icons.cloud), label: "Tab 2"),
-      const BottomNavigationBarItem(icon: Icon(Icons.cloud), label: "Tab 3"),
+      const BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.tableList), label: "Tab 1"),
+      const BottomNavigationBarItem(
+          icon: FaIcon(
+            FontAwesomeIcons.plusCircle,
+            size: 30,
+          ),
+          label: "Tab 2"),
+      const BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.solidCircleUser), label: "Tab 3"),
     ];
 
     final kAppBarItems = [
@@ -42,6 +52,10 @@ class _HomeScreenState extends State<HomeScreen> {
     assert(kTabPages.length == kBottomNavBarItems.length);
 
     final bottomNavBar = BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        backgroundColor: ColorGame.lightPrimaryBack,
+        selectedItemColor: ColorGame.lightPrimaryColor,
         items: kBottomNavBarItems,
         currentIndex: _currentTabIndex,
         type: BottomNavigationBarType.fixed,
@@ -51,7 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         });
     return Scaffold(
-      appBar: kAppBarItems[_currentTabIndex],
       body: kTabPages[_currentTabIndex],
       bottomNavigationBar: bottomNavBar,
     );

@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 
 class ColorGame {
   // Light Theme
-  static const Color lightPrimaryBack = Color.fromARGB(255, 232, 247, 238);
+  static const Color lightPrimaryBack = Color.fromARGB(255, 240, 240, 241);
   static const Color lightSecondaryBack = Color(0xFF71816D);
   static const Color lightPrimaryColor = Color(0xFF003049);
   static const Color lightSecondaryColor = Color(0xFF912F56);

@@ -1,4 +1,3 @@
-import 'package:evant/screens/auth/login/index.dart';
 import 'package:evant/screens/home/index.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }
